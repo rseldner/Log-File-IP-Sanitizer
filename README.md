@@ -16,8 +16,11 @@ Script Prompt Preview:
 Pattern Options:
 
 A. 192.XXX.123.XXX
+
 B. XXX.168.XXX.123
+
 C. XXX.XXX.XXX.123
+
 D. XXX.XXX.XXX.XXX
 
 Select desired output pattern:
@@ -27,7 +30,9 @@ Do you wish to remove a domain name or string [Y/N]?
 Y
 
 Enter the domain or string you wish to remove:
+
 Private.Domain.Name
 
-Enter the string you wish to replace this with: E.g. DOMAIN.COM
+Enter the string you wish to replace this with: 
+
 DOMAINREDACTED
