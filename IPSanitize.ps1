@@ -1,4 +1,4 @@
-﻿#IP Sanitizer by Roberto Seldner
+#IP Sanitizer by Roberto Seldner
 #Syntax: .\IPSanitize.ps1 .\path\
 #Use this script to remove IP addresses and a domain from all files within a specified directory and its subdirectories
 #Script will create a "Sanitized-Logs" directory ONE LEVEL UP from the input folder.  All output files will be in this folder.  
@@ -27,12 +27,10 @@ Log File IP Scrubber by Roberto Seldner
 ================================" -f cyan
 Write-Host "
 Pattern Options:
-
 A. 192.XXX.123.XXX
 B. XXX.168.XXX.123
 C. XXX.XXX.XXX.123
 D. XXX.XXX.XXX.XXX
-
 Select desired output pattern:
 " -f Yellow
 $IPCHOICE=Read-Host
@@ -171,7 +169,7 @@ Else{
     foreach { 
     $IPs = Get-Content $_.FullName
     $COUNT1=$IPs | select-string -pattern $IPREGEXSIMP -AllMatches
-    $OUTFILES1=$OUTDIR+$_ 
+    $OUTFILES1=$OUTDIR+"\scrubbed-"+$_ 
     $IPs -Replace $IPREGEXSIMP, $PATTERN > $OUTFILES1
     Write-Output $_.FULLNAME $COUNT1.Matches.Count "-----------------------------------------------------" |
     Tee-Object -FilePath $SCRUBLOG -Append
